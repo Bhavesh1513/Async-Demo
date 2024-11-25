@@ -5,7 +5,7 @@ document.getElementById("fetchButton").addEventListener("click", async () => {
     try {
       const response = await fetch("https://dummyjson.com/posts");
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("Network response was not ok"); // if resposne error throws error
       }
       const data = await response.json();
       const posts = data.posts.map((post) => post.title).join("<br>");
